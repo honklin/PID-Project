@@ -1,4 +1,4 @@
-# PID-Project
+# PID Project
 ## Table of Contents
 * [Planning](#Planning)
 * [Code](#Code)
