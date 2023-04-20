@@ -1,14 +1,14 @@
 # PID-Project
 ## Table of Contents
 * [Planning](#Planning)
-* [CAD](#CAD)
 * [Code](#Code)
+* [CAD](#CAD)
 * [Assembly](#Assembly)
 
 ## Planning
 
-## CAD
-
 ## Code
+
+## CAD
 
 ## Assembly
