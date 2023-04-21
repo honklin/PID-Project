@@ -16,14 +16,20 @@ https://docs.google.com/document/d/1F2JCuq7YCHW3Lv81fLc3tMGUtD7HIeB3eArvS5VSfUk/
 
 ## Code
 
+### Description
+
 ### Reflection
 
 ### Tuning
 
 ## CAD
 
+### Description
+
 ### Reflection
 
 ## Assembly
+
+### Description
 
 ### Reflection
