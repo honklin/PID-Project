@@ -3,7 +3,7 @@
 * [Planning](#Planning)
 * [Code](#Code)
 * [CAD](#CAD)
-.* [Assembly](#Assembly)
+* [Assembly](#Assembly)
 
 ## Planning
 ### Project Description and Requirements
