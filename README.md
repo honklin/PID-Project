@@ -37,7 +37,7 @@ https://docs.google.com/document/d/1F2JCuq7YCHW3Lv81fLc3tMGUtD7HIeB3eArvS5VSfUk/
 
 
 ### Reflection
-
+T-slot neglegence. I definetley realized what not do when using T-Slots and Laser Joints. The T-Slots/laser joints arent actually hindering any part of the design, they are just really asymetrical and ugly. The only sight problem this created was the asymitericalness caused the top of the box to only fit one way. We reaized this after it was assembled and had to do a bit of reassembly so that al the parts would fit.
 ## Assembly
 
 ### Description
