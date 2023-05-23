@@ -8,6 +8,7 @@
 ## Planning
 ### Project Description and Requirements
 ⭐ Design, Build, and Program a device that uses PID feedback control. ⭐ 
+
 Requirements:
 Use only an Arduino and other standard components in the Sigma Lab
 Use 4 or 6 AA batteries and a battery pack for power
