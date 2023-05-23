@@ -19,7 +19,7 @@ We created a ping pong ball floater using PID limits. The motor is housed in a b
 
 ### Planning Document
 
-https://docs.google.com/document/d/1F2JCuq7YCHW3Lv81fLc3tMGUtD7HIeB3eArvS5VSfUk/edit
+Link to the [planning document](https://docs.google.com/document/d/1F2JCuq7YCHW3Lv81fLc3tMGUtD7HIeB3eArvS5VSfUk/edit)
 
 ### Sketches
 
