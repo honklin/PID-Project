@@ -39,6 +39,7 @@ The code for this project uses PID to control the speed of a motor based on the 
 Wiring diagram for PID project
 
 ### Reflection
+One of the most difficult parts of this code was controling the user input
 
 ### Tuning
 
