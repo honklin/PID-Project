@@ -190,8 +190,7 @@ Link to the [Onshape Document](https://cvilleschools.onshape.com/documents/cae23
 ![Assemby CAD front view](https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(2).png)
 
 ![Assemby CAD angle view](https://github.com/honklin/PID-Project/blob/main/images/Assembly%201.png)
-
-![part studio box](https://github.com/honklin/PID-Project/blob/main/images/Part%20Studio%201.png)
+Back angle of PID box
 
 ![Part Studio 1](https://github.com/honklin/PID-Project/assets/112962114/ebe8a898-2f9b-4f17-b540-33bbbbd98565)
 Side angle of fan
