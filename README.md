@@ -185,15 +185,18 @@ This gave me a limited amount of time to work on the code and tune the PID befor
 Link to the [Onshape Document](https://cvilleschools.onshape.com/documents/cae23d9f292dc30b34fb14cb/w/1f6cba44752eedd2b7e14d8a/e/930f21f8e03fe640d7c35464)
 
 ### Evidence
-![Assemby CAD Image 1](https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(1).png)
-
 ![Assemby CAD front view](https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(2).png)
+Front view of PID box
+
+![Assemby CAD Image 1](https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(1).png)
+Back view of PID box
 
 ![Assemby CAD angle view](https://github.com/honklin/PID-Project/blob/main/images/Assembly%201.png)
-Back angle of PID box
+Back right view of PID box
 
 ![Part Studio 1](https://github.com/honklin/PID-Project/assets/112962114/ebe8a898-2f9b-4f17-b540-33bbbbd98565)
 Side angle of fan
+
 ### Reflection
 In the begining of the project, CAD design was started before we fully understood what method was going to be used to propell the ball intothe air. I started designing a funnel for a NMB fan. Mr Deirlof kindly desgined a squirrel fan for all of the people with this project idea. After we adapted the fan to our model, we were able to start designing the box around the fan and all. The overall design for creating this in onshape was fairly straightforward and easy. Probably the most important aspect of the design process in onshape would be effectivly using the edit in context tool and basing all the finished project off of the existing parts we had. 
 
