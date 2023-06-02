@@ -208,6 +208,10 @@ One thing that I learned was the usefulness of using limits on planar mates. For
 
 ### Description
 Our assembly consisted of a laser cut box that housed the fan LCD screen, rotary encoder, switch, arduino and battery pack. The tube we used was actually an old face shield that was used during covid. There is a space cut in the back of the box that allows airflow to the fan 
+
+### Video
+
+
 ### Reflection
 One thing about the finished project that could be better would be the support for the tube. The tube itself is very tall and with height, it brings a few structural issues. None of these issues are hugely detrimental to the overall soundness of the build, but it does create a little wobble when moving the box and adjusting the various parts of the box.
 
