@@ -174,6 +174,10 @@ Wiring diagram for PID project
 ### Reflection
 One of the most difficult parts of this code was controling the user input
 
+PID has three components, proportional, integral and derivative. The PID function is the brain of the operation. Kp serves as the variable that lets the arduino know how much power it needs to supply to the motor to reach the setpoint. After we have the original jump to the stepoint, Ki takes care of repeating errors and allows the fan to be more accurate and correct long term errors. Lastly the Kd monitors how fast the fan is engaging to reduce occilation. If the Kd is too low, the fan will occilate a lot. Another aspect of the PID challenge included adding limits to the speed in which how fast or slow the ball sunk. 
+
+Another difficulty we faced in this project was only being able to tune the code once the project was fabricated. This reduced the time we had to make update to both the code and the design of the project. 
+
 ### Tuning
 
 ## CAD
