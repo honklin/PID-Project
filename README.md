@@ -86,7 +86,7 @@ def setpoint(): # changes the height the ball is set to
             lcd.print("Press to set")
             lcd.set_cursor_pos(1,7)
             lcd.print(str(newHeight))
-        if (button.value == False): # exits once user presses and releases button
+        if (button.value == False): # exits once user presses and releases rotary encoder
             while (button.value == False):
                 pid.setpoint = newHeight
             break
@@ -106,7 +106,7 @@ def manual(): # allows the user to change the motor speed by twisting the rotary
         oldSpeed = newSpeed
         position = encoder.position
         add = position - oldPosition
-        if (add > 0 and newPos < 100):
+        if (add > 0 and newPos < 100): # keeps rotary encoder within limits of 0-100
             newPos = newPos + add
         elif (add < 0 and newPos > 0):
             newPos = newPos + add
@@ -115,53 +115,48 @@ def manual(): # allows the user to change the motor speed by twisting the rotary
         elif (newPos < 0):
             newPos = 0
         oldPosition = position
-        newSpeed = int(simpleio.map_range(newPos,0,100,0,65535)) 
-        if (oldSpeed != newSpeed):
+        newSpeed = int(simpleio.map_range(newPos,0,100,0,65535)) # converts rotary encoder value to motor speed
+        if (oldSpeed != newSpeed): # prints new speed if knob is rotated
             motor.duty_cycle = newSpeed
             lcd.set_cursor_pos(0,0)
             lcd.print("Motor speed:")
             lcd.set_cursor_pos(1,6)
             lcd.print(str(newSpeed))
-        if (button.value == False):
+        if (button.value == False): # exits once user presses and releases rotary encoder
             while (button.value == False):
                 lcd.clear()
                 motor.duty_cycle = 0
             break
 
-while True:
-    try:
-        height = 57 - dist.distance
-        speed = int(pid(height))
+while True: # runs PID control
+    try: # checks if distance sensor will throw an error
+        height = 57 - dist.distance # counts height from bottom of tube
+        speed = int(pid(height)) # PID library outputs speed from height input
         motor.duty_cycle = speed
-        print("speed")
-        print(speed)
-        print("height")
-        print(height)
-        print(" ")
-    except RuntimeError:
-        print("retry")
+    except RuntimeError: # retries if distance sensor throws and error
+        time.sleep(.001)
     time.sleep(.1)
-    if (encoder.position % 10 < 5 and option != 0):
-        option = 0
+    if (encoder.position % 10 < 5 and option != 0): # if encoder is rotated to select changing the height
+        option = 0 # selects changing setpoint option
         lcd.clear()
         lcd.set_cursor_pos(0,0)
         lcd.print("Press to change")
         lcd.set_cursor_pos(1,0)
         lcd.print("height")
-    elif (encoder.position % 10 >= 5 and option != 1):
-        option = 1
+    elif (encoder.position % 10 >= 5 and option != 1): # if encoder is rotated to select manual motor control
+        option = 1 # selects controlling the motor manually
         lcd.clear()
         lcd.set_cursor_pos(0,0)
         lcd.print("Press to change")
         lcd.set_cursor_pos(1,0)
         lcd.print("motor speed")
-    if (button.value == False):
+    if (button.value == False): # once user presses and releases rotary encoder
         while (button.value == False):
             motor.duty_cycle = 0
         lcd.clear()
-        if (option == 0):
+        if (option == 0): # calls change setpoint function
             setpoint()
-        if (option == 1):
+        if (option == 1): # calls manual motor control function
             manual()
         time.sleep(1)
 ```
