@@ -31,48 +31,48 @@ The code for this project uses PID to control the speed of a motor based on the 
 ### Code
 ```python
 import board
-from lcd.lcd import LCD
+from lcd.lcd import LCD # lcd libraries
 from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
-import adafruit_hcsr04
-import rotaryio
+import adafruit_hcsr04 # distance sensor library
+import rotaryio # rotary encoder library
 import digitalio
-import simpleio
-from PID import PID  
+import simpleio # map function library
+from PID import PID # PID library
 import pwmio   
 import time 
 
-pid = PID(100,800,1000)
-pid.setpoint = 35
-pid.output_limits = (24000,34000)
+pid = PID(100,800,1000) # pid object with pid variables of 100, 800, and 1000
+pid.setpoint = 35 # height of ball
+pid.output_limits = (24000,34000) # keeps motor from making the ball move too fast
 
 motor = pwmio.PWMOut(board.D8,duty_cycle = 65535,frequency=5000) # motor
 motor.duty_cycle = 0
 
-i2c = board.I2C()
+i2c = board.I2C() # lcd object
 lcd = LCD(I2CPCF8574Interface(i2c, 0x27), num_rows=2, num_cols=16)
 
-encoder = rotaryio.IncrementalEncoder(board.D3,board.D4)
+encoder = rotaryio.IncrementalEncoder(board.D3,board.D4) # rotary encoder knob object
 
-button = digitalio.DigitalInOut(board.D2)       
+button = digitalio.DigitalInOut(board.D2) # rotary encoder button object       
 button.pull = digitalio.Pull.UP
 button.direction = digitalio.Direction.INPUT
 
-dist = adafruit_hcsr04.HCSR04(trigger_pin = board.D5, echo_pin = board.D6)
+dist = adafruit_hcsr04.HCSR04(trigger_pin = board.D5, echo_pin = board.D6) # distance sensor object
 
-option = -1
+option = -1 # variable that lets user switch functions
 
-def setpoint():
+def setpoint(): # changes the height the ball is set to
     newHeight = pid.setpoint
-    lcd.set_cursor_pos(0,0)
+    lcd.set_cursor_pos(0,0) # print new position
     lcd.print("Press to set")
     lcd.set_cursor_pos(1,7)
     lcd.print(str(newHeight))
     oldPos = encoder.position
-    while (True):
+    while (True): # loops until user exits
         oldHeight = newHeight
         pos = encoder.position
         add = pos - oldPos
-        if (add > 0 and newHeight < 57):
+        if (add > 0 and newHeight < 57): # keeps user from exceeding bounds
             newHeight = newHeight + add
         elif (add < 0 and newHeight > 0):
             newHeight = newHeight + add
@@ -80,29 +80,29 @@ def setpoint():
             newHeight = 57
         elif (newHeight < 0):
             newHeight = 0
-        if (newHeight != oldHeight):
+        if (newHeight != oldHeight): # reprints height if knob is rotated
             lcd.clear()
             lcd.set_cursor_pos(0,0)
             lcd.print("Press to set")
             lcd.set_cursor_pos(1,7)
             lcd.print(str(newHeight))
-        if (button.value == False):
+        if (button.value == False): # exits once user presses and releases button
             while (button.value == False):
                 pid.setpoint = newHeight
             break
         oldPos = pos
     lcd.clear()
 
-def manual():
+def manual(): # allows the user to change the motor speed by twisting the rotary encoder
     motor.duty_cycle = 0
     newSpeed = motor.duty_cycle
-    lcd.set_cursor_pos(0,0)
+    lcd.set_cursor_pos(0,0) # prints new speed
     lcd.print("Motor speed:")
     lcd.set_cursor_pos(1,6)
     lcd.print(str(newSpeed))
     newPos = encoder.position
     oldPosition = encoder.position
-    while True:
+    while True: # runs until user exits back to PID control
         oldSpeed = newSpeed
         position = encoder.position
         add = position - oldPosition
