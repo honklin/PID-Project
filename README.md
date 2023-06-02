@@ -22,6 +22,8 @@ We created a ping pong ball floater using PID limits. The motor is housed in a b
 Link to the [planning document](https://docs.google.com/document/d/1F2JCuq7YCHW3Lv81fLc3tMGUtD7HIeB3eArvS5VSfUk/edit)
 
 ### Sketches
+![sketch 1](https://github.com/honklin/PID-Project/assets/112962114/38efeac4-c5ee-45e3-8089-61fcac12e671)
+![sketch 2](https://github.com/honklin/PID-Project/assets/112962114/65f4c737-fd42-4191-bed6-d18fdc42f66a)
 
 ## Code
 
