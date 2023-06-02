@@ -30,7 +30,140 @@ The code for this project uses PID to control the speed of a motor based on the 
 
 ### Code
 ```python
+import board
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+import adafruit_hcsr04
+import rotaryio
+import digitalio
+import simpleio
+from PID import PID  
+import pwmio   
+import time 
 
+pid = PID(100,800,1000)
+pid.setpoint = 35
+pid.output_limits = (24000,34000)
+
+motor = pwmio.PWMOut(board.D8,duty_cycle = 65535,frequency=5000) # motor
+motor.duty_cycle = 0
+
+i2c = board.I2C()
+lcd = LCD(I2CPCF8574Interface(i2c, 0x27), num_rows=2, num_cols=16)
+
+encoder = rotaryio.IncrementalEncoder(board.D3,board.D4)
+
+button = digitalio.DigitalInOut(board.D2)       
+button.pull = digitalio.Pull.UP
+button.direction = digitalio.Direction.INPUT
+
+dist = adafruit_hcsr04.HCSR04(trigger_pin = board.D5, echo_pin = board.D6)
+
+option = -1
+
+def setpoint():
+    newHeight = pid.setpoint
+    lcd.set_cursor_pos(0,0)
+    lcd.print("Press to set")
+    lcd.set_cursor_pos(1,7)
+    lcd.print(str(newHeight))
+    oldPos = encoder.position
+    while (True):
+        oldHeight = newHeight
+        pos = encoder.position
+        add = pos - oldPos
+        if (add > 0 and newHeight < 57):
+            newHeight = newHeight + add
+        elif (add < 0 and newHeight > 0):
+            newHeight = newHeight + add
+        if (newHeight > 57):
+            newHeight = 57
+        elif (newHeight < 0):
+            newHeight = 0
+        if (newHeight != oldHeight):
+            lcd.clear()
+            lcd.set_cursor_pos(0,0)
+            lcd.print("Press to set")
+            lcd.set_cursor_pos(1,7)
+            lcd.print(str(newHeight))
+        if (button.value == False):
+            while (button.value == False):
+                pid.setpoint = newHeight
+            break
+        oldPos = pos
+    lcd.clear()
+
+def manual():
+    motor.duty_cycle = 0
+    newSpeed = motor.duty_cycle
+    lcd.set_cursor_pos(0,0)
+    lcd.print("Motor speed:")
+    lcd.set_cursor_pos(1,6)
+    lcd.print(str(newSpeed))
+    newPos = encoder.position
+    oldPosition = encoder.position
+    while True:
+        oldSpeed = newSpeed
+        position = encoder.position
+        add = position - oldPosition
+        if (add > 0 and newPos < 100):
+            newPos = newPos + add
+        elif (add < 0 and newPos > 0):
+            newPos = newPos + add
+        if (newPos > 100):
+            newPos = 100
+        elif (newPos < 0):
+            newPos = 0
+        oldPosition = position
+        newSpeed = int(simpleio.map_range(newPos,0,100,0,65535)) 
+        if (oldSpeed != newSpeed):
+            motor.duty_cycle = newSpeed
+            lcd.set_cursor_pos(0,0)
+            lcd.print("Motor speed:")
+            lcd.set_cursor_pos(1,6)
+            lcd.print(str(newSpeed))
+        if (button.value == False):
+            while (button.value == False):
+                lcd.clear()
+                motor.duty_cycle = 0
+            break
+
+while True:
+    try:
+        height = 57 - dist.distance
+        speed = int(pid(height))
+        motor.duty_cycle = speed
+        print("speed")
+        print(speed)
+        print("height")
+        print(height)
+        print(" ")
+    except RuntimeError:
+        print("retry")
+    time.sleep(.1)
+    if (encoder.position % 10 < 5 and option != 0):
+        option = 0
+        lcd.clear()
+        lcd.set_cursor_pos(0,0)
+        lcd.print("Press to change")
+        lcd.set_cursor_pos(1,0)
+        lcd.print("height")
+    elif (encoder.position % 10 >= 5 and option != 1):
+        option = 1
+        lcd.clear()
+        lcd.set_cursor_pos(0,0)
+        lcd.print("Press to change")
+        lcd.set_cursor_pos(1,0)
+        lcd.print("motor speed")
+    if (button.value == False):
+        while (button.value == False):
+            motor.duty_cycle = 0
+        lcd.clear()
+        if (option == 0):
+            setpoint()
+        if (option == 1):
+            manual()
+        time.sleep(1)
 ```
 
 ### Wiring Diagram
