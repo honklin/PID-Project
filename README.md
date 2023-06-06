@@ -234,7 +234,7 @@ One thing that I learned was the usefulness of using limits on planar mates. For
 Our assembly consisted of a laser cut box that housed the fan LCD screen, rotary encoder, switch, arduino and battery pack. The tube we used was actually an old face shield that was used during covid. There is a space cut in the back of the box that allows airflow to the fan 
 
 ### Video
-![gogogo](https://github.com/honklin/PID-Project/assets/112962114/365a28d6-a7f3-48dd-b3e0-f406ac16cda5)
+![finalGif2 1b](https://github.com/honklin/PID-Project/assets/112962114/919e58b1-7bc1-4272-8d1a-1506d9a52fed)
 
 
 ## Assembly Reflection
