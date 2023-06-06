@@ -48,7 +48,7 @@ The code for this project uses PID to control the speed of a motor based on the 
 ### Wiring Diagram
 
 ![PID Wiring](https://github.com/honklin/PID-Project/assets/121810694/be6a0463-50cd-4c57-927b-61d566eccf6d)
-Wiring diagram for PID project
+We made our wiring diagram neat and organized because otherwise the wiring is very hard to understand
 
 ### Code
 ```python
