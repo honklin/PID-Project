@@ -26,6 +26,7 @@ We created a ping pong ball floater using PID limits. The motor is housed in a b
 * Fan blades (3D printed)
 * Rotary encoder
 * Switch
+* Ping pong ball
 * Plastic tube
 
 ### Planning Document
