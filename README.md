@@ -200,14 +200,22 @@ This gave me a limited amount of time to work on the code and tune the PID befor
 Link to the [Onshape Document](https://cvilleschools.onshape.com/documents/cae23d9f292dc30b34fb14cb/w/1f6cba44752eedd2b7e14d8a/e/930f21f8e03fe640d7c35464)
 
 ### Evidence
-![Assemby CAD front view](https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(2).png)
+
+<img src="https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(2).png" width="250" height="350">
+
 Front view of PID box
+
+<img src="https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(2).png" width="350" height="400">
 
 ![Assemby CAD Image 1](https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(1).png)
 Back view of PID box
 
+<img src="https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(1).png" width="250" height="350">
+
 ![Assemby CAD angle view](https://github.com/honklin/PID-Project/blob/main/images/Assembly%201.png)
 Back right view of PID box
+
+<img src="https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(2).png" width="250" height="350">
 
 ![Part Studio 1](https://github.com/honklin/PID-Project/assets/112962114/ebe8a898-2f9b-4f17-b540-33bbbbd98565)
 Side angle of fan
