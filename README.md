@@ -38,7 +38,7 @@ Link to the [planning document](https://docs.google.com/document/d/1F2JCuq7YCHW3
 
 
 
-<img src="https://github.com/honklin/PID-Project/assets/112962114/1dfa361e-4c4d-43a3-a721-a11e3b7278d5" width="250" height="250">
+<img src="https://github.com/honklin/PID-Project/assets/112962114/1dfa361e-4c4d-43a3-a721-a11e3b7278d5" width="250" height="350">
 
 ## Code
 
