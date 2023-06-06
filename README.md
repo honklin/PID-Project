@@ -52,6 +52,8 @@ Wiring diagram for PID project
 
 ### Code
 ```python
+# This code will use PID to increase or decrease the speed of a fan
+# depending on the height of the ball in order to keep the ball at the correct height
 import board
 from lcd.lcd import LCD # lcd libraries
 from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
