@@ -33,6 +33,11 @@ Link to the [planning document](https://docs.google.com/document/d/1F2JCuq7YCHW3
 ### Description
 The code for this project uses PID to control the speed of a motor based on the input of a distance sensor to keep a ping pong ball floating at a certain height.
 
+### Wiring Diagram
+
+![PID](https://github.com/honklin/PID-Project/assets/121810694/ebdb1ad4-41ef-4e67-868b-61fa972533c0)
+Wiring diagram for PID project
+
 ### Code
 ```python
 import board
@@ -166,11 +171,6 @@ while True: # runs PID control
         time.sleep(1)
 ```
 Code for PID Project
-
-### Wiring Diagram
-
-![PID](https://github.com/honklin/PID-Project/assets/121810694/ebdb1ad4-41ef-4e67-868b-61fa972533c0)
-Wiring diagram for PID project
 
 ## Code Reflection
 One of the most difficult parts of this code was controling the user input. The rotary encoder is helpful in that it lets the user select between several different options, but because the knob will count up indefinitely, it makes it difficult to set limits for the output. If I just used encoder.position, the values would keep counting even once they got past the limits, so I would have to twist the knob until it got back within range, but it was difficult to know which was was the right way to twist the knob. Because of this, I had to use several if statements to make sure that the code doesn't overshoot the limits. I also had to use a while loop inside an if statement to make sure that the user had let go of the button before proceeding in the code because otherwise the code would just run straight past and select other options that the user didn't mean to select.
