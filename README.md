@@ -52,6 +52,8 @@ We made our wiring diagram neat and organized because otherwise the wiring is ve
 
 ### Code
 ```python
+# Lucia and Hazel
+# PID Project
 # This code will use PID to increase or decrease the speed of a fan
 # depending on the height of the ball in order to keep the ball at the correct height
 import board
