@@ -217,8 +217,6 @@ Front view of PID box. This view serves to show the housing of the box along wit
 Back view of PID box. The view shows fan and motor housing and placement of our parts inside the box. Inside the box you can see that the arduino & prototyping shield, battery pack, fan and the back of the switch and rotary encoder are well spaced.
 
 
-<img src="https://github.com/honklin/PID-Project/blob/main/images/Assembly%201.png" width="400" height="500">
-
 ## CAD Reflection
 In the begining of the project, CAD design was started before we fully understood what method was going to be used to propell the ball intothe air. I started designing a funnel for a NMB fan. Mr Deirlof kindly desgined a squirrel fan for all of the people with this project idea. After we adapted the fan to our model, we were able to start designing the box around the fan and all. The overall design for creating this in onshape was fairly straightforward and easy. Probably the most important aspect of the design process in onshape would be effectivly using the edit in context tool and basing all the finished project off of the existing parts we had. 
 
