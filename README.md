@@ -18,7 +18,15 @@ Ensure everything is securely mounted (the Arduino can use standoffs or rubber f
 We created a ping pong ball floater using PID limits. The motor is housed in a box with a tube extending out of the top and is controlled by a rotary controller and LCD. 
 
 ### Bill of Materials
- * 
+* Metro and prototyping shield
+* DC motor
+* Distance sensor
+* LCD screen
+* 9V battery pack
+* Fan blades (3D printed)
+* Rotary encoder
+* Switch
+* Plastic tube
 
 ### Planning Document
 
