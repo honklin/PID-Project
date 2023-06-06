@@ -69,12 +69,12 @@ import time
 
 pid = PID(100,800,1000) # pid object with pid variables of 100, 800, and 1000
 pid.setpoint = 35 # height of ball
-pid.output_limits = (24000,34000) # keeps motor from making the ball move too fast
+pid.output_limits = (34000,42000) # keeps motor from making the ball move too fast
 
 motor = pwmio.PWMOut(board.D8,duty_cycle = 65535,frequency=5000) # motor
 motor.duty_cycle = 0
 
-i2c = board.I2C() # lcd object
+i2c = board.I2C() # lcd object 
 lcd = LCD(I2CPCF8574Interface(i2c, 0x27), num_rows=2, num_cols=16)
 
 encoder = rotaryio.IncrementalEncoder(board.D3,board.D4) # rotary encoder knob object
@@ -180,6 +180,10 @@ while True: # runs PID control
         while (button.value == False):
             motor.duty_cycle = 0
         lcd.clear()
+        lcd.set_cursor_pos(0,0)
+        lcd.print("Press to change")
+        lcd.set_cursor_pos(1,0)
+        lcd.print("height")
         if (option == 0): # calls change setpoint function
             setpoint()
         if (option == 1): # calls manual motor control function
