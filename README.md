@@ -17,6 +17,9 @@ Ensure everything is securely mounted (the Arduino can use standoffs or rubber f
 
 We created a ping pong ball floater using PID limits. The motor is housed in a box with a tube extending out of the top and is controlled by a rotary controller and LCD. 
 
+### Bill of Materials
+ * 
+
 ### Planning Document
 
 Link to the [planning document](https://docs.google.com/document/d/1F2JCuq7YCHW3Lv81fLc3tMGUtD7HIeB3eArvS5VSfUk/edit)
@@ -169,7 +172,7 @@ Code for PID Project
 ![PID](https://github.com/honklin/PID-Project/assets/121810694/ebdb1ad4-41ef-4e67-868b-61fa972533c0)
 Wiring diagram for PID project
 
-### Reflection
+## Code Reflection
 One of the most difficult parts of this code was controling the user input. The rotary encoder is helpful in that it lets the user select between several different options, but because the knob will count up indefinitely, it makes it difficult to set limits for the output. If I just used encoder.position, the values would keep counting even once they got past the limits, so I would have to twist the knob until it got back within range, but it was difficult to know which was was the right way to twist the knob. Because of this, I had to use several if statements to make sure that the code doesn't overshoot the limits. I also had to use a while loop inside an if statement to make sure that the user had let go of the button before proceeding in the code because otherwise the code would just run straight past and select other options that the user didn't mean to select.
 
 PID is a complicated code concept that essentially adjusts an output based on an input information to keep the input at the right value. In our code, I used PID so that the height of the ball input to the PID function output the correct motor speed to keep the ball at the correct height. It has three variables: Proportional, Integral and Derivative. The Proportional variable controls how fast the motor runs to reach the setpoint. The higher this variable is, the faster the ball will go up, but it will very likely overshoot and need a lot of time to adjust. If this variable is slower, the motor speed will increase slowly and may take a while to reach the correct height. The Integral variable controls how much the motor speed changes as it tries to adjust to get the ball to the right level. If this variable is high, the motor will change values by large amounts and will likely overshoot and undershoot while trying to adjust. If this variable is low, the motor will change very slowly and will take a long time to adjust to the right speed. The Derivative variable shrinks the adjustments as the height reaches the setpoint so that the motor is less likely to overshoot the setpoint. I used output limits on my PID because I measured the speeds for the motor where the ball would lift and fall very slowly so that the ball did not oscillate a lot. Otherwise, the ball would shoot up and down and the PID wouldn't be able to correct the overadjustments fast enough. However, I noticed that I had to adjust the output limits when we changed batteries because the motor would need a faster or slower speed to be able to lift the ball than it had before because it was being supplied with higher or lower voltages.
@@ -197,7 +200,7 @@ Back right view of PID box
 ![Part Studio 1](https://github.com/honklin/PID-Project/assets/112962114/ebe8a898-2f9b-4f17-b540-33bbbbd98565)
 Side angle of fan
 
-### Reflection
+## CAD Reflection
 In the begining of the project, CAD design was started before we fully understood what method was going to be used to propell the ball intothe air. I started designing a funnel for a NMB fan. Mr Deirlof kindly desgined a squirrel fan for all of the people with this project idea. After we adapted the fan to our model, we were able to start designing the box around the fan and all. The overall design for creating this in onshape was fairly straightforward and easy. Probably the most important aspect of the design process in onshape would be effectivly using the edit in context tool and basing all the finished project off of the existing parts we had. 
 
 There was quite a bit of T-slot neglegence. I definetley realized what not do when using T-Slots and Laser Joints. The T-Slots/laser joints arent actually hindering any part of the design, they are just really asymetrical and ugly. The only sight problem this created was the asymitericalness caused the top of the box to only fit one way. We reaized this after it was assembled and had to do a bit of reassembly so that al the parts would fit.
@@ -213,7 +216,7 @@ Our assembly consisted of a laser cut box that housed the fan LCD screen, rotary
 ![gogogo](https://github.com/honklin/PID-Project/assets/112962114/365a28d6-a7f3-48dd-b3e0-f406ac16cda5)
 
 
-### Reflection
+## Assembly Reflection
 One thing about the finished project that could be better would be the support for the tube. The tube itself is very tall and with height, it brings a few structural issues. None of these issues are hugely detrimental to the overall soundness of the build, but it does create a little wobble when moving the box and adjusting the various parts of the box.
 
 Another thing that was a bit of an oversight was the wire collection on the side of the tube. Due to the fact that we are this late in the game, the only reasonable solutionto this issue would be using rubberbands or another form of security of wires. Again, this by itself does not show much of an issue, but it reduces proffesionality. 
