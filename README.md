@@ -201,24 +201,23 @@ Link to the [Onshape Document](https://cvilleschools.onshape.com/documents/cae23
 
 ### Evidence
 
-<img src="https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(2).png" width="250" height="350">
+<img src="https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(2).png" width="400" height="500">
 
 Front view of PID box
 
-<img src="https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(2).png" width="350" height="400">
 
-![Assemby CAD Image 1](https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(1).png)
 Back view of PID box
 
-<img src="https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(1).png" width="250" height="350">
+<img src="https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(1).png" width="400" height="500">
 
-![Assemby CAD angle view](https://github.com/honklin/PID-Project/blob/main/images/Assembly%201.png)
+
 Back right view of PID box
 
-<img src="https://github.com/honklin/PID-Project/blob/main/images/Assembly%201%20(2).png" width="250" height="350">
+<img src="https://github.com/honklin/PID-Project/blob/main/images/Assembly%201.png" width="400" height="500">
 
-![Part Studio 1](https://github.com/honklin/PID-Project/assets/112962114/ebe8a898-2f9b-4f17-b540-33bbbbd98565)
-Side angle of fan
+
+Side angle of fan 
+<img src="https://github.com/honklin/PID-Project/assets/112962114/ebe8a898-2f9b-4f17-b540-33bbbbd98565" width="400" height="500">
 
 ## CAD Reflection
 In the begining of the project, CAD design was started before we fully understood what method was going to be used to propell the ball intothe air. I started designing a funnel for a NMB fan. Mr Deirlof kindly desgined a squirrel fan for all of the people with this project idea. After we adapted the fan to our model, we were able to start designing the box around the fan and all. The overall design for creating this in onshape was fairly straightforward and easy. Probably the most important aspect of the design process in onshape would be effectivly using the edit in context tool and basing all the finished project off of the existing parts we had. 
